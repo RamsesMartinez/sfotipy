@@ -11,5 +11,5 @@ class Artist(models.Model):
         verbose_name_plural = "Artists"
 
     def __str__(self):
-        pass
-    
+        return self.first_name
+

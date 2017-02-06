@@ -44,7 +44,8 @@ THIRD_APPS = []
 USER_APPS = [
     'artists.apps.ArtistsConfig',
     'tracks.apps.TracksConfig',
-    'albums.apps.AlbumsConfig'
+    'albums.apps.AlbumsConfig',
+    'userprofiles.apps.UserprofilesConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + USER_APPS
@@ -128,3 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Backends:
+AUTHENTICATION_BACKENDS = (
+    'userprofiles.backends.EmailBackend',
+)

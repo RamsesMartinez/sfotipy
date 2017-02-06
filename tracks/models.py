@@ -11,3 +11,5 @@ class Track(models.Model):
     album = models.ForeignKey(Album)
     artist = models.ForeignKey(Artist)
 
+    def __str__(self):
+        return self.title

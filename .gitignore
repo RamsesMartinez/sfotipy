@@ -72,5 +72,11 @@ crashlytics-build.properties
 fabric.properties
 db.sqlite3
 
+albums/migrations/*
+!albums/migrations/__init__.py
+
+artists/migrations/*
+!artists/migrations/__init__.py
+
 tracks/migrations/*
 !tracks/migrations/__init__.py
