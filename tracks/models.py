@@ -20,6 +20,7 @@ class Track(models.Model):
         """ % self.track_file.url
 
     player.allow_tags = True
+    player.admin_order_field = 'track_file'
 
     def __str__(self):
         return self.title
