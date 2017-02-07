@@ -3,7 +3,8 @@ from django.db.models import Q
 
 
 class EmailBackend(object):
-    def authenticate(self, email_or_username=None, password=None):
+    @staticmethod
+    def authenticate(email_or_username=None, password=None):
         try:
             user = User.objects.get(Q(username=email_or_username) | Q(email=email_or_username))
             if user.check_password(password):
@@ -11,7 +12,8 @@ class EmailBackend(object):
         except User.DoesNotExist:
             return None
 
-    def get_user(self, user_id):
+    @staticmethod
+    def get_user(user_id):
         try:
             return User.objects.get(id=user_id)
         except User.DoesNotExist:
